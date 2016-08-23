@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adboss</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300normal,300italic,400normal,400italic,600normal,600italic,700normal,700italic,800normal,800italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+  <section class="home-section page" id="intro">
+
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" />
+      </div>
+    </header>
+
+    <div class="header-outer">
+      <iframe ng-src="{{getVideoURL()}}" class="iframe-size" frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
+
+  </section>
+
+  <div class="main-container">
+    <div id="content">
+      <div class="page video-container hidden" style="background-color: #000000;z-index: 1000; top: 0; left: 0; bottom: 0; right: 0;"></div>
+      <div class="button-stop-spot hidden">
+        <a href="#"><img src="images/icon-close-spot.svg"></a>
+      </div>
+    </div>
+  </div>
+
+  <section class="footer">
+    <div class="main-block">
+      <div class="logo">
+        <img src="images/logo-footer.png" />
+      </div>
+      <div class="footer-heading">
+        <h2>Download <span>AdBoss</span> Today</h2>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+        <a class="applinks" href="#">
+          <img src="images/mac-app.png">
+        </a>
+        <a class="applinks" href="#">
+          <img src="images/google-play.png">
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="footer-end">
+    <div class="container">
+      <div class="col-xs-12 col-md-2  col-sm-2">
+        <span>AdBoss Socials</span>
+        <ul class="socials">
+          <li>
+            <a class="facebook" href="#"><img src="images/facebook.png" alt="" /></a>
+          </li>
+          <li>
+            <a class="twitter" href="#"><img src="images/twitter.png" alt="" /></a>
+          </li>
+          <li>
+            <a class="instagram" href="#"><img src="images/instagram.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-8 col-sm-8 ">
+        <div class="copyrights">
+          <p>© 2016 All Rights Reserved</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-2  col-sm-2">
+        <ul>
+          <li><a href="#">Press Kit</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Help & Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/custom.js"></script>
+  <!--iframe fit on screen with javascript  -->
+  <script>
+  $(document).ready(function() {
+    Website.init({
+      'youtubeUrl': 'YuePDVTGsT0'
+    });
+  });
+  jQuery(document).ready(function() {
+    var minHeight = 700;
+    jQuery(function() {
+      minHeight = jQuery(window).height() > 700 ? jQuery(window).height() : 700;
+      if (jQuery('.page').attr('data-min-height')) {
+        jQuery('.page').css('min-height', minHeight);
+      } else {
+        jQuery('.page').height(minHeight);
+      }
+      jQuery('.page-container').css('min-height', minHeight + "px");
+      jQuery('nav').css({
+        'min-height': minHeight + "px"
+      });
+    });
+
+    var minHeight = window.innerHeight;
+    document.getElementById("intro").style.minHeight = minHeight + "px";
+
+    function resize() {
+      /*var minHeight = window.innerHeight;
+      document.getElementById("intro").style.minHeight = minHeight + "px";*/
+      var heights = window.innerHeight;
+      document.getElementById("intro").style.height = heights - 50 + "px";
+    }
+    resize();
+    window.onresize = function() {
+      resize();
+    };
+
+  });
+
+  $('.mobile-content').hide();
+  $('#video-icon').mouseover(function() {
+    $('#one').show();
+  });
+  $('#video-icon').mouseout(function() {
+    $('.mobile-content').hide();
+  });
+  $('#user-icon').mouseover(function() {
+    $('#one').hide();
+    $('#two').show();
+  });
+  $('#user-icon').mouseout(function() {
+    $('#one').show();
+    $('#two').hide();
+  });
+  $('#wish-icon').mouseover(function() {
+    $('#three').show();
+    $('#one').hide();
+    $('#two').hide();
+  });
+  $('#wish-icon').mouseout(function() {
+    $('#three').hide();
+    $('#one').show();
+    $('#two').hide();
+  });
+  $('#share-icon').mouseover(function() {
+    $('#four').show();
+    $('#one').hide();
+    $('#two').hide();
+    $('#three').hide();
+  });
+  $('#share-icon').mouseout(function() {
+    $('.mobile-content').hide();
+    $('#four').hide();
+    $('#one').show();
+    $('#two').hide();
+    $('#three').hide();
+  });
+  </script>
+</body>
+
+</html>
